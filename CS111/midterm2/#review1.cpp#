@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+
+int getNumber()
+{
+  int x;
+  cout << "Enter a number: ";
+  cin >> x;
+  return x;
+}
+
+void printNumber( int x )
+{
+  if ( x < 10 )
+    {
+

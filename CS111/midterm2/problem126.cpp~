@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+/* void digitSum(int x)
+{
+  if(x<10)
+    return;
+  if(x<100)
+    cout << x*x%10;
+  digitSum(x/10;
+	   }
+*/ 
+  int main(){
+    int n;
+    cout << "Enter a positive integer that is at most 100. ";
+    cin >> n;
+    for (int i = 1; i < 1000; i++)
+      {
+	cout << i <<" ";
+      }
+    return 0;
+  }

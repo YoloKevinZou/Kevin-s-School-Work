@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int n;
+  cout << "Enter a positive integer: ";
+  cin >> n;
+  for(int r = n;n>=0;r--)
+    {
+      for(int c=n;c>=0;c--)
+	{
+	  if(c==n)
+	    cout << "*";
+	  if(r==1)
+	    cout << "*";
+	}
+    }
+  return 0;
+} 

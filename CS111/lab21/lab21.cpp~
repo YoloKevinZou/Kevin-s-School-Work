@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+void getNumber(int number[][100], int row, int col)
+{
+  for ( int r=0; r< row;r++)
+    {
+      for (int c =0; c< col; c++)
+	{
+	  cout << r << ", " << c << " value: ";
+	  cin >> number[r][c];
+	}
+      for ( int r = 0;r < row; r++)
+	{
+	  for (int c = 0 ; c < col; c++)
+	    number[r][c] << " ";
+	  cout << endl;
+	}
+    }
+int main()
+{
+  int number[100][100];
+  int row, col;
+  cout << "Enter row/col size: ";
+  cin >> row >> col;
+
+  getNumber( number, row, col );
+
+  return 0;
+}

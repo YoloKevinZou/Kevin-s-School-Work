@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+  int n;
+  cout << "Enter an integer: ";
+  cin >> n;
+  ofstream f("output.txt");
+  if(f==0) 
+      cerr << "That file can't be used." << endl;
+    for(int i=1; i <= n; i++)
+      f << "Hello world, im new" << endl;
+    return 0;
+}

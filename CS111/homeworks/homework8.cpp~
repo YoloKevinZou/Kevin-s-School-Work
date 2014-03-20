@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int size;
+  cout <<"Enter an even integer size ";
+  cin >> size;
+  while(size%2!=0)
+    {
+      cout << "Enter an even integer size ";
+      cin >> size;
+    }
+  for(int r=1;r<=size;r++)
+    {
+      for(int c=1;c<=size;c++)
+	{
+	  if(c==1||c==size||r==size)
+	    cout << "*";
+	  else cout <<" ";
+	}
+      cout <<endl;
+    }
+  return 0;
+}
+

@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int getNumber()
+{
+  cout << "Enter a number: ";
+  int num;
+  cin >> num;
+  return num;
+}
+
+int smallestFactor( int num )
+{
+  for (int i=2;i<=num;i++)
+    {
+      if(num%i== 0)
+        return i;
+      return num;
+    }
+}
+
+int main()
+{
+  int number = getNumber();
+  while( number > 1)
+    {
+  int f=smallestFactor(number);
+  cout << f << " " ;
+  number = number / f;
+    }
+  cout << endl;
+  return 0;

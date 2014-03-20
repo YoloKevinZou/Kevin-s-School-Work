@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+void printStar(int n)
+{
+  if(n==1)
+    cout << "*";
+  printStar(n/10)*10;
+}
+
+int main()
+{
+  int n;
+  cout << "Enter a 5 digit integer: ";
+  cin >> n;
+  printStar(n);
+  return 0;
+}

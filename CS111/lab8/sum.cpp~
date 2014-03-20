@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+  int sum=0;
+  int counter=1;
+  while(counter<=10)
+    {
+      int number;
+      cout << "Enter number: ";
+      cin>>number;
+      sum = sum +number;
+      counter++;
+    }
+  cout << "The total is: " << sum << endl;
+  return 0;
+}

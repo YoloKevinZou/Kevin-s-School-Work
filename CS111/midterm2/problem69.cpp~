@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int evens(int x)
+{
+  if ( x < 10)
+    {
+      if (x%2==0)
+	return x;
+      return 0;
+    }
+  return evens(x/10)+even(x%10);
+
+
+int main(){
+  cout << evens(16) << endl;
+  cout << evens(666) << endl;
+  cout << evens(777) << endl;
+  return 0;
+}

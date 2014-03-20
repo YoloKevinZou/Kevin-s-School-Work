@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  string text;
+  cout << "Enter some text: ";
+  cin >> text;
+
+  cout << text.substr(1,3) << endl;
+
+  return 0;
+
+}

@@ -1,0 +1,240 @@
+Question
+
+OUTPUT: NEED THE CID, CNAME,
+ACCT NUMBER, BALANCE
+
+SELECT C.CID, CFIRST, CLAST,
+        A.ACCT_NUM, BALANCE
+FROM 
+   ACCOUNTS A, 
+   CUSTOMERS C,
+   CUSTOMER_ACCOUNTS CA
+WHERE
+   A.ACCT_NUM = CA.ACCT_NUM AND
+   C.CID = CA.CID;
+
+--------------
+Question: 
+
+IDENTIFY CUSTOMERS WITH CLOSED
+ACCOUNTS
+
+OUTPUT: NEED THE CID, CNAME,
+ACCT NUMBER, BALANCE
+
+
+Answer: 
+
+SELECT C.CID, CFIRST, CLAST,
+        A.ACCT_NUM, BALANCE
+FROM 
+   ACCOUNTS A, 
+   CUSTOMERS C,
+   CUSTOMER_ACCOUNTS CA
+WHERE ACCT_CLOSE IS NOT NULL;
+
+======================
+You can use these operators
+
+<> NOT EQUAL TO
+>
+<
+>=
+<=
+IS NULL
+IS NOT NULL
+
+
+===============
+
+GROUP BY
+
+Question: Identify the number of customers
+in each city
+
+Need the following output:
+
+ccity       number
+--------   --------
+Bronx       1
+Chicago     2
+Miami       1
+
+Answer:
+
+SELECT  CCITY, COUNT(*),
+FROM CUSTOMERS
+GROUP BY CCITY;
+
+
+============
+
+
+Group by 
+
+Question: Identify the number of accounts
+for each customer
+
+Need the following output:
+
+cid      COUNT(*)
+------   ------------------
+902        2
+888        1
+116        1
+
+
+Answer: 
+
+SELECT CID, COUNT(*) "Number of Accounts"
+FROM CUSTOMER_ACCOUNTS
+GROUP BY CID; 
+
+
+================
+
+Question: Identify the total dollar amount
+on deposit at the bank now. Display
+the total amount on deposit.
+
+Answer: 
+
+SELECT  SUM(BALANCE)
+FROM ACCOUNT
+WHERE acct_close is null;
+
+SQL> 8150
+
+
+=================
+Question: How to add a new column to a 
+previously created table?
+
+ADD ZIPCODE TO CUSTOMERS
+
+ALTER TABLE CUSTOMERS
+ADD COLUMN CZIPCODE CHAR(5);
+
+
+
+sQL> ONE COLUMN ADDED
+
+update customers
+set czipcode = '30456'
+where  cfirst = 'Bob'
+and clast = 'Jones' and cid = 902 ;
+
+
+
+Modify a previously created column:
+
+ALTER TABLE CUSTOMERS
+modify COLUMN CZIPCODE CHAR(9);
+
+
+Rename a previously created column:
+
+ALTER TABLE CUSTOMERS
+RENAME COLUMN CZIPCODE TO ZIP_CODE;
+
+------------------------------
+
+OBJECTIVE: CREATE A COPY OF A PREVIOUSLY
+CREATED TABLE.
+
+
+CREATE TABLE CUSTOMERS2
+AS SELECT * 
+   FROM CUSTOMERS;
+
+---------------------
+
+Then you can modify and test the 
+copy table rather than the original 
+table.
+
+
+UPDATE CUSTOMERS2
+SET CZIPCODE = '1136a'
+WHERE CITY = 'CHICAGO' AND line1 = '1414 MAIN STREET'
+
+domain of zipcode 0-9
+
+11111
+00001
+
+SELECT * 
+FROM CUSTOMERS;
+
+------------------------------
+Question: Identify customers with the 
+lowest balance in Chicago.
+
+
+SELECT MIN(BALANCE)
+FROM CUSTOMERS C, 
+     ACCOUNTS A, 
+     CUSTOMER_ACCOUNTS CA
+WHERE
+   C.CID = CA.CID   AND
+   A.ACCT_NUM = CA.ACCT_NUM  AND
+    upper(CCITY) = 'CHICAGO';
+    
+OUTPUT
+SQL>  400
+
+Chicago = CHICAGO
+CHicago
+CHICAGO = 'CHICAGO';
+
+
+
+
+
+
+
+
+
+
+
+CHAR(5)
+INTEGER
+VARCHAR(5) - OUT
+
+11367
+10461
+05037 THIS WILL BE STORED AS 5037
+
+LENGTH IS FIXED AT 5
+IF YOU NEED TO PRESERVE EVERY CHARACTER
+THEN YOU NEED A CHAR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+void printNames(string names[], int size)
+{
+  for (int i = 0; i < size; i++)
+    {
+      cout << "Enter grade " << i+1 << ": ";
+      cin >> names[i];
+    }
+}
+
+void printNames(string names[], int size)
+{
+  for ( int i = 0; i < size; i++)
+    cout << names[i] << " ";
+  cout << endl;
+}
+
+void swapMin(string names[], int size, int index)
+{
+  string min = names[index];
+  string minIndex=index;
+
+  for ( int i = index +1; i < size; i++)
+    {
+      if ( min > names[i])
+	{
+	  min = names[i];
+	  minIndex=i;
+	}
+    }
+  string temp=names[index];
+  names[index]=names[minIndex];
+  names[minIndex]=temp;
+}
+
+void sort(string names[], int size)
+{
+  for ( int i = 0; i < size - 1; i ++)
+    {
+      swapMin(array, size, i);
+      printNames(names, size);
+    }
+}
+
+int main(){
+  int size;
+  cout << "Enter number of students: ";
+  cin >> size;
+
+  int names[size];
+  getNames(names,size);
+
+  printNames(names,size);
+  sort(names,size);
+  printNames(names,size);
+  return 0;
+}

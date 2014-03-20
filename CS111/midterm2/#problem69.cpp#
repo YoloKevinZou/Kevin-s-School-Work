@@ -1,0 +1,1 @@
+int main() { cout << evens(16) << endl; cout << evens(666) << endl; cout << evens(777) << endl; return 0;

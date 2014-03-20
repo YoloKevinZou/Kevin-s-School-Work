@@ -1,0 +1,88 @@
+#include <iostream>
+using namespace std;
+
+void getNumbers( int numbers[][100], int row, int col )
+{
+  for ( int r = 0 ; r < row ; ++r )
+    for ( int c = 0 ; c < col ; ++c )
+      {
+	cout << r << ", " << c << " enter number: ";
+	cin >> numbers[r][c];
+      }
+}
+
+void printNumbers( int numbers[][100], int row, int col )
+{
+  for ( int r = 0 ; r < row ; ++r )
+    {
+      for ( int c = 0 ; c < col ; ++c )
+	cout << numbers[r][c] << " ";
+
+      cout << endl;
+    }
+}
+
+void printTranspose(int array[][100], int row, int col)
+{
+  for (int c = 0; c < col; c++)
+    {
+      for ( int r = 0; r< row; r++)
+	cout << array[r][c] << " ";
+
+      cout << endl;
+    }
+}
+
+int getMax( int number[], int size )
+{
+  int max = number[0];
+  for ( int i = 1 ; i < size ; ++i )
+    if ( max < number[i] )
+      max = number[i];
+  return max;
+}
+
+void getMaxColumnValues(int numbers[][100],int row, int col, int maxValues[])
+{
+  for (int c = 0; c < col; c++)
+    {
+      int max = numbers[0][c];
+      for ( int r = 1; r < row; r++)
+	{
+	  if(max<numbers[r][c])
+	    max = numbers[r][c];
+	}
+      maxValues[c]=max;
+    }
+}
+
+void printTranspose(int array[][100], int row, int col)
+{
+  for ( int c = 0; c < col; c++)
+    {
+      for ( int r=0; r < row; r++)
+	cout << array[r][c]<< " ";
+      cout << endl;
+    }
+}
+
+int main()
+{
+  int numbers[100][100];
+  int row, col;
+  cout << "Enter number of rows and columns: ";
+  cin >> row >> col;
+
+  getNumbers( numbers, row, col );
+
+  printNumbers( numbers, row, col );
+  int maxValues[col];
+  getMaxColumnValues(numbers,row,col,maxValues);
+
+  cout << "Max values are: ";
+  for (int i = 0; i < col; i++)
+    cout << maxValues[i] << " ";
+  cout << endl;
+  cout << "Largest value: " << getMax(maxValues, col) << endl;
+  return 0;
+}

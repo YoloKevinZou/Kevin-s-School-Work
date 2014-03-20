@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int students, quiz;
+  cout << "How many students: ";
+  cin >> students;
+  cout << "How many quizzes: ";
+  cin >> quiz;
+  int scores[students][quiz];
+  for ( int r = 0; r < quiz; r++)
+    {
+      for( int c = 0; c < students;c++)
+	{
+	  cout << "Enter scores for Quiz " << i+1 << ": ";
+	  cin >> scores[r][c];
+	}
+      cout << endl;
+    }
+  
+
+ return 0;
+}

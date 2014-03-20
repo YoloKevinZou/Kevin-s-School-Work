@@ -1,0 +1,123 @@
+#include <iostream>
+using namespace std;
+
+/**
+ * This function displays the greeting and menu.
+ *
+ * Parameter: none - everything needs to be display is contain in function
+ * Return: none - function does display only
+ */
+
+void displayMenu()
+{
+  cout << "Welcome to I Declare War" << endl;
+  cout << "Enter 0 anything to quit" << endl;
+  cout << "Enter 1 to start the game and draw a card: " << endl;
+}
+
+/**
+ * This function displays to the user the winning message.
+ *
+ * Parameter: P1 - player 1's score
+ * Parameter: p2 - player 2's score
+ * Return: none - function does display only
+ */
+
+void displayWarWinner(int p1, int p2)
+{
+  if(p1>p2)
+    cout << "Player 1 won with " << p1 << " to " << p2 << endl;
+  else if ( p2>p1)
+    cout << "Player 2 won with " << p2 << " to " << p1 << endl;
+  else cout << "The war was a tie." << endl;
+}
+
+/**
+ *This function generates the random number
+ *
+ *Parameters: does not have parameter
+ *Return: return the number that is random generated
+ */
+
+int getRandomCardValue()
+{
+  int num=rand()%13+1;
+  return num;
+}
+
+/**
+ * This function ases the user to enter 1 to continue or 0 to quit the game
+ * Parameters: does not have parameter
+ *
+ * Return: it returns the choice made by the user
+ */
+
+int getOption()
+{
+  int num;
+  cout << "Enter 1 to continue the game and 0 to quit: ";
+  cin >> num;
+  if(num==1)
+    return num;
+}
+
+/**
+ * This function determine and awards the winner for the point
+ * base on the card they drive with 1 is the highest then 13,12,11 and so on
+ *
+ * Parameter: first card
+ * Parameter: second card
+ * Parameter: player 1 score
+ * Parameter: player 2 score
+ * Return: does not return anything
+ */
+ 
+void determineWinner(int card1, int card2, int &player1Score, int &player2Score)
+{
+  if(card1==1&&card2!=1)
+    {
+      player1Score+=1;
+      cout << "Player 1 wins!!"<< endl;
+    }
+  else if (card2==1&&card1!=1)
+    {   
+      player2Score+=1;
+      cout << "Player 2 wins!!"<< endl;
+    }
+  else if (card1>card2)
+    {
+      player1Score+=1;
+      cout << "Player 1 wins!!"<< endl;
+    }
+  else if (card2>card1)
+    {   
+      player2Score+=1;
+      cout << "Player 2 wins!!"<< endl;
+    }
+  else if (card1==card2)
+    cout << "It's a tie" << endl;
+}
+
+
+int main() {
+  srand(time(0));
+  displayMenu();
+
+  int player1Score = 0, player2Score = 0;
+  int option = getOption();
+  while ( option == 1 )
+    {
+      int card1=getRandomCardValue();
+      int card2=getRandomCardValue();
+
+      cout << "I drew: " << card1 << endl;
+      cout << "You drew: " << card2 << endl;
+
+      //player1Score, player2Score are pass by reference
+      // so the scores can be updated
+      determineWinner(card1, card2, player1Score, player2Score);
+      option=getOption();
+    }
+  displayWarWinner( player1Score, player2Score);
+  return 0;
+}

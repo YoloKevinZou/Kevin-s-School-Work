@@ -1,0 +1,194 @@
+Haiqiang Zou
+Homework 2
+CS340
+
+1. ls - l
+
+total 12
+drwx------. 28 zoha2717 underg 4096 Dec 12  2011 cs111
+drwx------.  2 zoha2717 underg 4096 May 20  2012 cs211
+drwx------.  2 zoha2717 underg 4096 May 19  2012 mail
+
+2. cd /bin and ls -l
+
+3. total 9308
+-rwxr-xr-x. 1 root root      123 Feb 21  2013 alsaunmute
+-rwxr-xr-x. 1 root root    27776 May 23 07:00 arch
+lrwxrwxrwx. 1 root root        4 Jun 17 11:56 awk -> gawk
+-rwxr-xr-x. 1 root root    26264 May 23 07:00 basename
+-rwxr-xr-x. 1 root root   938832 Jul 18 09:19 bash
+-rwxr-xr-x. 1 root root    48568 May 23 07:00 cat
+
+4. List 6 commands that you recognize
+
+	ls, rmdir, rm, ping, traceroute, mv
+	
+
+5. cd /dev then ls -l. There are consoles, CPU, RAMS. 
+
+total 0
+crw-rw----. 1 root root     10,  56 Aug 26 00:36 autofs
+drwxr-xr-x. 2 root root         640 Aug 26 00:35 block
+drwxr-xr-x. 2 root root          80 Aug 26 00:35 bsg
+drwxr-xr-x. 3 root root          60 Aug 26 00:35 bus
+lrwxrwxrwx. 1 root root           3 Aug 26 00:35 cdrom -> sr0
+lrwxrwxrwx. 1 root root           3 Aug 26 00:35 cdrw -> sr0
+
+6. cd /etc
+
+7. shell, bluetooth, sound, java
+
+8. There are 5 types of permission, read, write, directory, no access and execute. when you type in ls -l the first column
+   displays the permission pattern, the 3rd column shows the owner. 
+   
+9. cat profile
+	a script for system wide environment and start up programs, for login setup.
+   cat login.defs
+	its a script which limits how many times you can change your password a day, login attemps, and 
+
+10. cat passwd
+zoha2717:x:3675:800:Haiqiang Zou:/home/fa13/340/zoha2717:/bin/bash
+
+11. echo $HOME
+/home/fa13/340/zoha2717
+
+12. pwd 
+/home/fa13/340
+
+
+C. Shell(s) and Shell Environment variables
+
+1. echo $SHELL
+/bin/bash
+
+2. cat /etc/shells
+/bin/sh
+/bin/bash
+/sbin/nologin
+/bin/dash
+/bin/tcsh
+/bin/csh
+/bin/ksh
+
+3. chsh 
+Changing shell for zoha2717.
+Password: 
+New shell [/bin/bash]: /bin/tcsh
+Shell changed.
+
+4. echo $SHELL
+/bin/tcsh
+
+5. ps
+  PID TTY          TIME CMD
+32617 pts/34   00:00:00 tcsh
+32636 pts/34   00:00:00 ps
+
+6. set | more
+addsuffix	
+argv	()
+autolist	
+csubstnonl	
+cwd	/home/fa13/340/zoha2717
+dirstack	/home/fa13/340/zoha2717
+
+7. echo $CDPATH
+CDPATH: Undefined variable.
+
+echo $ENV
+ENV: Undefined variable.
+
+echo $PWD 
+/home/fa13/340/zoha2717
+
+echo $HOME
+/home/fa13/340/zoha2717
+
+echo $TERM
+xterm-256color
+
+8. man setenv
+ETENV(3)                  Linux Programmer’s Manual                 SETENV(3)
+
+NAME
+       setenv - change or add an environment variable
+
+SYNOPSIS
+       #include <stdlib.h>
+
+       int setenv(const char *name, const char *value, int overwrite);
+
+       int unsetenv(const char *name);
+
+
+Part D. Process
+
+1. man ps
+PS(1)                         Linux User’s Manual                        PS(1)
+
+NAME
+       ps - report a snapshot of the current processes.
+
+SYNOPSIS
+       ps [options]
+
+DESCRIPTION
+       ps displays information about a selection of the active processes. If
+       you want a repetitive update of the selection and the displayed
+       information, use top(1) instead.
+
+       This version of ps accepts several kinds of options:
+       1   UNIX options, which may be grouped and must be preceded by a dash.
+       2   BSD options, which may be grouped and must not be used with a dash.
+       3   GNU long options, which are preceded by two dashes.
+
+       Options of different types may be freely mixed, but conflicts can
+       appear. There are some synonymous options, which are functionally
+       identical, due to the many standards and ps implementations that this
+       ps is compatible with.
+
+
+2. Process States
+R - runnable which means the process has done a context switch and has the kernel.
+
+S - sleeping which means the process is waiting on I/O completion (blocked), a pipe, memory, etc.
+
+T - process has been stopped - sent a SIGSTOP usually with ctrl/z
+
+Z - zombie - a process that has a process image in memory but no context, ie., not swappable.
+
+echo $SHELL - identifies my login shell which is tcsh
+/bin/tcsh
+
+3. ps -l
+F - the flag field.
+S - S field is the state of the process, two most common values are S for Sleeping and R for running
+UID - User ID of the process owner
+PID - Process ID of each process.
+PPID - Parent Process ID. Identifies the parent process that started the process.
+C - SPU usage and scheduling information
+PRI - stands for priority field, lower the value the higher the value.
+NI - stands for nice value
+ADDR - Address of the process
+SZ - refers to the size field. total number of pages in the process.
+WCHAN - Memory address of the event the process
+TTY - terminal assigned to your process.
+TIME - cumulative execution time of the process in minutes and seconds
+CMD - command that was executed.
+
+4. top
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND           
+29456 leki7520  20   0 11732  920  784 R 99.8  0.0  96:35.50 a.out              
+ 1890 jile5625  20   0 18384 7644  980 R 99.5  0.0   1:18.50 medium             
+10941 gosu1792  20   0  245m  18m 6364 R 99.5  0.0  17055:44 emacs              
+ 1703 fist3936  20   0 11740 1020  876 R 99.1  0.0   3:13.43 a.out              
+ 1929 zoha2717  20   0 15296 1544  952 R  0.7  0.0   0:00.09 top                
+ 1439 suav0720  20   0 99996 1992 1008 S  0.3  0.0   0:00.08 sshd               
+ 1921 quse1539  20   0  140m 3424 2216 S  0.3  0.0   0:00.03 vim                
+ 8698 oracle    -2   0 19.2g  17m  15m S  0.3  0.0 677:26.30 ora_vktm_csdept    
+ 8732 oracle    20   0 19.2g  46m  43m S  0.3  0.1  22:33.87 ora_
+
+5. Tasks: 459 total,   5 running, 416 sleeping,  38 stopped,   0 zombie
+
+
+

@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int number1,number2;
+  cout << "enter first value: ";
+  cin >> number1;
+  cout << "enter second value: ";
+  cin >> number2;
+  if(number1==number2)
+    cout << "You got a tied"<< endl;
+  else if(number1>number2)
+    cout << "High: " << number1 << "\tLow: " << number2<< endl;
+  else if(number2>number1)
+    cout << "High: " << number2 << "\tLow: " << number1 << endl;
+  return 0;
+}

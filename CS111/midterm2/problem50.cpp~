@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void readNumbers(int number[], int size)
+{
+  for ( int i = 0;i < size; i++)
+    {
+      cout << "Enter a single digit integer: ";
+      cin >> number[i];
+    }
+}
+
+
+int main(){
+  int size; 
+  cout << "Enter a positive integer that is less than 100: ";
+  cin >> size;
+  int number[size];
+  readNumbers(number,size);
+ 
+ return 0;
+}

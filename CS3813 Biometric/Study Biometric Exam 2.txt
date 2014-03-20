@@ -1,0 +1,14 @@
+Study Biometric Exam 2
+1) Given an RoC find EER
+2) Given the header information of a WAV file, determine the acoustic information. 
+3) Payload Data(in integer form) of the wave file
+	- Identify the frame, given the frame duration.
+	- How many data frames in the window
+	- How to do the discrete fourier transform on the data 
+	  on a frame
+	- Discrete frequency to continuous frequency
+	- Mel Spectrum, 20 bins
+4) eigen face
+5) crypto
+
+Extra Credit - when does 1-n O.T doesnt work

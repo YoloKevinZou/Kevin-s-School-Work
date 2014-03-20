@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  //do not change the following line, it setups up random value
+  srand(time(0));
+
+  //get upper bound
+  int max;
+  cout << "Specify a upper bound: ";
+  cin >> max;
+
+  //generate secret number
+  int secret = rand()%max +1;
+ 
+  //askes the user to enter their guess number and enter 0 to quit the game.
+  int guess;  
+  cout << "Enter your guess number, enter 0 to quit ";
+  cin >> guess;
+
+  // in the condition when the guess number does not equal to the secret number it will tell you that either your guess number 
+  // is bigger or less then the secret number so you can input your guess number again. However if you got your answer right it
+  //will ask you whether or not if you want to play it again. if yes, it will ask you to input a new upper bound and a new guess number.
+  // if no, the problem will exit.  
+
+  while(guess!=secret||guess==secret)
+    {
+      if(guess==0)
+	exit(1);
+      if(guess<secret)
+	{
+	  cout << "The secret number is higher, enter 0 to quit: ";
+	  cin >> guess;
+	}   
+      if(guess>secret)
+	{
+	  cout << "The secret number is lower, enter 0 to quit: ";
+	  cin >> guess;
+	}
+      while(guess==secret)
+	{
+	  cout << "Congradulations, you got the number!! " << endl;
+	  string yes = "yes"; string no = "no";
+	  string answer;
+	  cout << "Do you want to play the game again? yes/no? ";
+	  cin >> answer;
+	  if(answer==yes)
+	    {
+	      cout <<"Specify an upper bound ";
+	      cin >> max;
+	      cout << "Enter your guess number, enter 0 to quit: ";
+	      cin >> guess;
+	      secret=rand()%max+1;
+	    }
+	  if(answer==no)
+	    exit(1);
+	  
+	}
+    }
+  return 0;
+}

@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int value; // variable value as an integer
+  cout << "Please enter an interger "; //display the message to ask the user to input an integer
+  cin >> value; // input value for the integer
+  value=value * value; // square of the value
+  cout << " The square of the value is " << value << endl; // display the the message and square of the value 
+  return 0;
+}

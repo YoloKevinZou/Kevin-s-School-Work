@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+/**
+ * This function will ask the user for the total price of the meal.
+ *
+ * Parameter: None
+ * Return: price - the price enter by the user.
+ */
+double getPrice()
+{
+  double price;
+  cout << "Enter the total cost for the meal: ";
+  cin >> price;
+  return price;
+}
+/**
+ * This function will ask the user for number of patron.
+ *
+ * Parameter: None
+ * Return: number of patron - the price enter by the user.
+ */
+int getNumberOfPatron()
+{
+  int number;
+  cout << "Enter the number of patron dining together: ";
+  cin >> number;
+  return number;
+}
+/**
+ * This function will compute cost per person.
+ *
+ * Parameter: total - cost of meal
+ * Parameter: persons - number of people dining
+ * parameter: tips - tips in decimal value
+ * Return: cost per person - the price each patron has to pay.
+ */
+
+double calculateTips( double total, int persons, double tips)
+{
+  return ((total*(tips+1))/persons);
+}
+
+int main()
+{
+  double price = getPrice();
+  
+  int number=getNumberOfPatron();
+  cout << "For 10% tip price per person is $" << calculateTips( price, number, .1 ) << endl;
+  cout << "For 15% tip price per person is $" << calculateTips( price, number, .15 ) << endl;
+  cout << "For 20% tip price per person $" << calculateTips( price, number, .2 ) << endl;
+  
+  return 0;
+}

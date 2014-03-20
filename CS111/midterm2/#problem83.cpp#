@@ -1,0 +1,5 @@
+#include <iostream>
+using namespace std;
+
+int main
+int main() { int a = 2, b = 7, c = 1; sort(a, b, c); cout << a << b << c << endl; return 0;

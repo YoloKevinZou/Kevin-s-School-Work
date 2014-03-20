@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int maint (){
+  int n;
+  cout << "Enter an integer that is at most 100: ";
+  cin >> n;
+  int array[n][n];
+  for(int r = 0; r < n; r++)
+    {
+      for ( int c = 0; c < n ; c++)
+	{
+	  cout << "Enter the number for: " << array[r][c];
+	  cin >> array[r][c];
+	}
+      cout << endl;
+    }
+  for ( int r = 0 ; r < n; r++)
+    {
+      for ( int c = 0; c < n; c++)
+	{
+	  cout << array[r][c];
+	}
+      cout << endl;
+    }
+  return 0;
+}

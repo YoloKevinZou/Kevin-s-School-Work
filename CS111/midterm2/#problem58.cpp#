@@ -1,0 +1,6 @@
+ing(4);
+}
+Answer:
+cout << endl; cout << endl; cout << endl;
+// prints 747 // prints 76767 // prints 777 // prints 717070707
+boeing(66); boeing(7); boeing(1000); cout << endl; return 0;

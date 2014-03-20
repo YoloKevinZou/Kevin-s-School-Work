@@ -1,0 +1,29 @@
+/**
+ * This function will compute cost per person.
+ *
+ * Parameter: total #include<iostream>
+using namespace std;
+/**
+ * This function will ask the user for the total price of the meal.
+ *
+ * Parameter: None
+ * Return: price - the price enter by the user.
+ */
+double getPrice()
+{
+  //your code goes here
+}
+/**
+ * This function will ask the user for number of patron.
+ *
+ * Parameter: None
+ * Return: number of patron - the price enter by the user.
+ */
+int getNumberOfPatron()
+{
+  //your code goes here
+}
+/**
+ * This function will compute cost per person.
+ *
+ * Parameter: total 

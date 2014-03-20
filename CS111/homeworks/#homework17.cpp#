@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  int size;
+  cout << "How many students are in the class? ";
+  cin >> size;
+
+  string names[size];
+
+  //read in the names from the user
+  for ( int i = 0 ; i < size ; ++i )
+    {
+      cout << "Enter name of student " << i+1 << ": ";
+      cin >> names[i];
+    }
+
+  int grades[size];
+  //ask the user for the grades
+  for ( int i = 0 ; i < size ; ++i )
+    {
+      cout << "Enter the grade for " << names[i] << ": ";
+      cin >> grades[i];
+    }
+
+  int max=grades[0];
+  for( int i=0; i < size; i++)
+    {
+      if(grades[i]>max)
+	max=grades[i]; 
+    }
+  
+  //prints out the names and grades
+  for ( int i = 0 ; i < size ; ++i )
+    {
+      cout << i+1 << ". " << names[i]  << " has the grade: " << grades[i] << endl;
+    }
+
+  // prints out the name the grade for those who got the highest grade.
+  for( int i= 0; i < size; i++)
+    {
+      if (grades[i]==max)
+	{
+	  cout << names[i] << " has the highest grade: " << grades[i] << endl;
+	}
+      int sum=0; 
+      sum+=grades[i];
+      cout << "The class average is: " << double(sum/size)<< endl;
+
+    }
+ return 0;
+}

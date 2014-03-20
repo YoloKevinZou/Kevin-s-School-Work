@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  int n;
+  cout << "Enter an integer that is at most 20: ";
+  cin >> n;
+  int array[n];
+  string words;
+  for (int i=0;i<n;i++)
+    {
+      cin >> words;
+    }
+  for (int i=0;i<n;i++)
+    {
+      cout << x.length();
+    }
+ 
+ return 0;
+}

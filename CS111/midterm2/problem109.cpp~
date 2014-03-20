@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+
+int quadratic(int a, int b, int c, int x)
+{
+  return a*(x*x)+(b*x)+c;
+}
+
+int main(){
+  double a = 1.0, b = 2,2, c = 1.21, x = 0.1;
+  cout << quadratic(a, b, c, x) << endl;
+  return 0;
+}

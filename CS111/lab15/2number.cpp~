@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+void swap(int &max, int &min)
+{
+  int t=max;
+  max=min;
+  min=max;
+}
+
+int getNumber(int num1,int num2)
+{
+  cout << "Enter first value: ";
+  cin >> num1;
+  cout << "Enter second value: ";
+  cin >> num2;
+  return getNumber;
+}
+int main()
+{
+  int x=getNumber();
+  int y=getNumber();
+  if(x==y)
+    cout << "Tie"<< endl;
+  else 
+    {
+      int max=x;
+      int min=y;
+      swap(max,min);
+      cout <<"max: "<< max << " min: " << min << endl;
+    }
+  return 0;
+  
+}

@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+  for(int r=1;r<=20;r++)
+    {
+      for(int c=1;c<=r*2;c++)
+	{
+	  if(c%2!=0)
+	    cout << c << " ";
+	}
+      cout << endl;
+    }
+  return 0;
+}

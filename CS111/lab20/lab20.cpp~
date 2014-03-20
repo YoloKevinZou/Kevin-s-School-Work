@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  int size;
+  cout << "Enter number of students: ";
+  cin >> size;
+
+  string names[size];
+  int grades[size];
+
+  getNamesAndGrades( names, grades, size) 
+    
+    return 0;
+}
