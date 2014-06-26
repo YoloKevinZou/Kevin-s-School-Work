@@ -1,0 +1,2 @@
+since mid - september , the two sides have already held 3 rounds of peace talks . -> 自 9 月 中旬 起 ， 有 双方 已 举行 3 轮 和平 会谈 。 ### prob=0.000
+a young turkish girl told xinhua reporters : ' this is the first time that i've seen such a beautiful chinese dance . -> 年轻 土耳其 女孩 告诉 新华社 记者 ∶ ” 这 是 ， 我 看到 这 麽 美 的 中国 舞蹈 的 第一 时间 。 ### prob=0.000

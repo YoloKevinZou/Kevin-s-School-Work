@@ -1,0 +1,1 @@
+VP-C(x0:VBN NP-C(NPB(x1:NNS) SBAR(x2:WHNP x3:SG-C))) -> x0 "一些" x1 x2 x3 ### prob=0.000177273533062
